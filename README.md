@@ -2,5 +2,5 @@
 A web portfolio management application via which users can look up stock quotes, conduct stock trading, and browse transaction history
 
 # Usage
-$ export API_KEY=value
+$ export API_KEY=value  
 $ flask run
