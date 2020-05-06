@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th>Stock</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Time</th>
+        </tr>
+        {% for trading in tradings %}
+            <tr>
+                <td>{{ trading.symbol }}</td>
+                <td>{{ trading.shares }}</td>
+                <td>{{ trading.price }}</td>
+                <td>{{ trading.timestamp }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

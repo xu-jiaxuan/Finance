@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th>Stock</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Value</th>
+        </tr>
+        {% for trading in tradings %}
+            <tr>
+                <td>{{ trading.symbol }}</td>
+                <td>{{ trading.total }}</td>
+                <td>{{ quotes[trading.symbol]["price"] }}</td>
+                <td>{{ trading.total * quotes[trading.symbol]["price"] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div>
+        Cash: {{ cash }}
+    </div>
+    <div>
+        Grand total: {{ cash + value }}
+    </div>
+{% endblock %}
